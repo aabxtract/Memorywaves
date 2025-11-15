@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { PenSquare, LayoutGrid, Settings } from 'lucide-react';
+import { PenSquare, LayoutGrid, Settings, Bot } from 'lucide-react';
 import { Icons } from '@/components/icons';
 
 const navItems = [
@@ -24,8 +24,8 @@ export function AppSidebar({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <div className="flex h-full flex-col">
         <div className="flex h-16 items-center border-b px-6">
-            <Link href="/" className="flex items-center gap-2 font-semibold">
-                <Icons.Logo className="h-6 w-6 text-primary" />
+            <Link href="/" className="flex items-center gap-2 font-semibold tracking-wider">
+                <Icons.Logo className="h-6 w-6 text-primary animate-pulse" />
                 <span>Memory Weavers</span>
             </Link>
         </div>
@@ -51,9 +51,12 @@ export function AppSidebar({ isMobile = false }: { isMobile?: boolean }) {
           })}
         </nav>
       <div className="mt-auto p-4 border-t">
-        <div className="text-xs text-muted-foreground">
-            <p className="mb-2 font-semibold">Collective Consciousness</p>
-            <p>A Web3 dApp where memories become generative art on-chain.</p>
+        <div className="text-xs text-muted-foreground space-y-2">
+            <div className="flex items-center gap-2 font-semibold">
+                <Bot className="h-4 w-4 text-primary" />
+                <p>Powered by AI</p>
+            </div>
+            <p>Your memories are analyzed and clustered by a generative AI model.</p>
         </div>
       </div>
     </div>
